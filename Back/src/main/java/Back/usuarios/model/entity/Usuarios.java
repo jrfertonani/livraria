@@ -1,12 +1,12 @@
 package Back.usuarios.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import Back.livros.model.entity.Livros;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data   @Entity
 public class Usuarios implements Serializable {
@@ -18,4 +18,7 @@ public class Usuarios implements Serializable {
     private String nome;
     private String email;
     private Long telefone;
+
+
+
 }
