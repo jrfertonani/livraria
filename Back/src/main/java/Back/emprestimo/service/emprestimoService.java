@@ -1,5 +1,7 @@
 package Back.emprestimo.service;
 
+import Back.emprestimo.model.DTO.emprestimoDTO;
+import Back.emprestimo.model.entity.Emprestimo;
 import Back.emprestimo.repository.emprestimoRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,13 @@ public class emprestimoService {
 
     @Autowired
     private emprestimoRepository repository;
+
+
+    public Emprestimo create(emprestimoDTO DTO) {
+        return repository.save(
+                mapper.map(DTO, Emprestimo.class)
+        );
+    }
 
 
 }
