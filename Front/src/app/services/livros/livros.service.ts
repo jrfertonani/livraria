@@ -3,19 +3,20 @@ import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Livros } from '../../model/Livros';
+import { Response } from '../../model/Response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LivrosService {
 
-  URL = environment.URL;
+  URL = 'http://localhost:8080/livros';
 
   constructor(private http: HttpClient) { }
 
 
-GetLivros():Observable<Livros[]>{
-  return this.http.get<Livros[]>(this.URL);
+getLivros():Observable<Response<Livros[]>>{
+  return this.http.get<Response<Livros[]>>(this.URL);
 }
 
 }
