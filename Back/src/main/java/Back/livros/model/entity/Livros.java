@@ -1,10 +1,12 @@
 package Back.livros.model.entity;
 
+import Back.emprestimo.model.entity.Emprestimo;
 import Back.usuarios.model.entity.Usuarios;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
+import java.util.List;
 
 @Data   @Entity
 public class Livros implements Serializable {
@@ -13,6 +15,17 @@ public class Livros implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String nome;
+
+    @Column(nullable = false)
+    private String titulo;
+
+    @Column(nullable = false)
+    private String autor;
+
+
+    // Outros atributos como editora, ano de publicação, etc.
+
+    @OneToMany(mappedBy = "livro")
+    private List<Emprestimo> emprestimos;
 
 }
