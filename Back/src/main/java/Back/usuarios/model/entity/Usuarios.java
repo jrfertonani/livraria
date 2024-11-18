@@ -1,5 +1,6 @@
 package Back.usuarios.model.entity;
 
+import Back.emprestimo.model.entity.Emprestimo;
 import Back.livros.model.entity.Livros;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
@@ -15,9 +16,14 @@ public class Usuarios implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(nullable = false)
     private String nome;
-    private String email;
-    private Long telefone;
+
+    // Outros atributos como endereço, telefone, etc.
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Emprestimo> emprestimos;
 
 
 
