@@ -22,9 +22,6 @@ public class Livros implements Serializable {
     @Column(nullable = false)
     private String autor;
 
-
-    // Outros atributos como editora, ano de publicação, etc.
-
     @OneToMany(mappedBy = "livros")
     private List<Emprestimo> emprestimos;
 
