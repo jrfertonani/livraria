@@ -25,7 +25,7 @@ public class Livros implements Serializable {
 
     // Outros atributos como editora, ano de publicação, etc.
 
-    @OneToMany(mappedBy = "livro")
+    @OneToMany(mappedBy = "livros")
     private List<Emprestimo> emprestimos;
 
 }
