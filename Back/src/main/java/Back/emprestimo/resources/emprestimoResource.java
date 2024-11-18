@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.util.List;
 
 @CrossOrigin("*")
 @RestController
@@ -32,6 +33,20 @@ public class emprestimoResource {
         return ResponseEntity.created(uri).body(DTO);
     }
 
+    @GetMapping
+    public ResponseEntity<List<emprestimoDTO>> findAll(){
+        return ResponseEntity.ok().body(
+                service.list()
+                .stream().map(
+                        x -> mapper.map(x, emprestimoDTO.class)
+                ).toList());
+    }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<emprestimoDTO> findById(@PathVariable Long id){
+        return ResponseEntity.ok().body(
+                service.findById(id)
+        );
+    }
 
 }
