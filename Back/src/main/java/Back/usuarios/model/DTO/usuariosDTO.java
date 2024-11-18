@@ -10,7 +10,6 @@ public class usuariosDTO implements Serializable {
 
     private Long id;
     private String nome;
-    private String email;
-    private Long telefone;
+
 
 }
