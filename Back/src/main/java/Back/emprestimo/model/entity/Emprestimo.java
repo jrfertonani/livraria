@@ -18,11 +18,11 @@ public class Emprestimo implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_livro")
-    private Livros livros;
+    private Livros livro;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuarios")
-    private Usuarios usuarios;
+    @JoinColumn(name = "id_usuario")
+    private Usuarios usuario;
 
 
     @Column(nullable = false)
@@ -33,7 +33,6 @@ public class Emprestimo implements Serializable {
 
     @Column(nullable = false)
     private boolean devolvido;
-
 
 
 }
