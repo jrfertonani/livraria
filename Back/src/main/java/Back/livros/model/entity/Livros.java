@@ -22,7 +22,7 @@ public class Livros implements Serializable {
     @Column(nullable = false)
     private String autor;
 
-    @OneToMany(mappedBy = "livros")
-    private List<Emprestimo> emprestimos;
+    @OneToMany(mappedBy = "livro")
+    private List<Emprestimo> emprestimo;
 
 }
