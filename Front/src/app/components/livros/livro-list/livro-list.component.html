@@ -6,6 +6,7 @@
       class="form-control"
       type="text"
       placeholder="Qual livro deseja buscar?"
+      (input)="search($event)"
     />
   </div>
 
@@ -28,11 +29,15 @@
               <td>{{ livro.titulo }}</td>
               <td>{{ livro.autor }}</td>
               <td>
-                <button class="btn btn-warning mx-2">Editar</button>
-                <button class="btn btn-danger mx-2">Excluir</button>
+                <button class="btn btn-warning mx-2"  >Editar</button>
+                <button class="btn btn-danger mx-2" (click)="deletar(livro.id)">Excluir</button>
               </td>
             </tr>
           }
+      }@else {
+        <tr class="text center">
+          <td colspan="4">Nenhum livro cadastrado!</td>
+        </tr>
       }
 
     </tbody>
