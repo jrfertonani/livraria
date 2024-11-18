@@ -49,4 +49,14 @@ public class emprestimoResource {
         );
     }
 
+    @PutMapping("/{id}")
+    public ResponseEntity<emprestimoDTO> update (@PathVariable Long id,
+                                                 @RequestBody emprestimoDTO DTO) {
+        DTO.setId(id);
+        Emprestimo obj = service.update(id, DTO);
+        return ResponseEntity.ok().body(DTO);
+    }
+
+
+
 }
