@@ -18,12 +18,12 @@ public class Emprestimo implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "id_livro")
-    private Livros livro;
-
+    private Livros livros;
 
     @ManyToOne
-    @JoinColumn(name = "id_usuario")
-    private Usuarios usuario;
+    @JoinColumn(name = "id_usuarios")
+    private Usuarios usuarios;
+
 
     @Column(nullable = false)
     private LocalDate dataEmprestimo;
