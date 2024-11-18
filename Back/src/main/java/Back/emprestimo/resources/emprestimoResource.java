@@ -56,6 +56,11 @@ public class emprestimoResource {
         Emprestimo obj = service.update(id, DTO);
         return ResponseEntity.ok().body(DTO);
     }
+    @DeleteMapping("/{id}")
+    public ResponseEntity<emprestimoDTO> delete(@PathVariable Long id){
+        service.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 
 
 
