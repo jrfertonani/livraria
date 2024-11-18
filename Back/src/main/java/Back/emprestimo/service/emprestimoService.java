@@ -55,4 +55,9 @@ public class emprestimoService {
                 mapper.map(DTO, Emprestimo.class)
         );
     }
+
+    public void delete(Long id) {
+        findById(id);
+        repository.deleteById(id);
+    }
 }
