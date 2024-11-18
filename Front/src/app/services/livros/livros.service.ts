@@ -15,8 +15,8 @@ export class LivrosService {
   constructor(private http: HttpClient) { }
 
 
-getLivros():Observable<Response<Livros[]>>{
-  return this.http.get<Response<Livros[]>>(this.URL);
+getLivros():Observable<Livros[]>{
+  return this.http.get<Livros[]>(this.URL);
 }
 
 }
