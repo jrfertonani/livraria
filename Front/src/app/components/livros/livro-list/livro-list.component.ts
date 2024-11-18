@@ -11,15 +11,16 @@ import { Livros } from '../../../model/Livros';
 })
 export class LivroListComponent implements OnInit{
 
-  livro : Livros [] =[];
+  livros : Livros [] =[];
   livrosGeral : Livros [] = [];
 
   constructor(private serviceLivro: LivrosService){}
 
 
   ngOnInit(): void {
-    this.serviceLivro.getLivros().subscribe(response =>{
-      this.livro = response.dados;
+    this.serviceLivro.getLivros().subscribe(livros =>{
+      this.livros = livros;
+      console.log(livros)
     })
   }
 
