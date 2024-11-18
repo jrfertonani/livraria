@@ -1,5 +1,6 @@
 package Back.usuarios.model.DTO;
 
+import Back.usuarios.model.entity.Usuarios;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -10,6 +11,7 @@ public class usuariosDTO implements Serializable {
 
     private Long id;
     private String nome;
+
 
 
 }
