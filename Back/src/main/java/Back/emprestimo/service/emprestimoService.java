@@ -49,4 +49,10 @@ public class emprestimoService {
         ), emprestimoDTO.class);
     }
 
+    public Emprestimo update(Long id, emprestimoDTO DTO) {
+        findById(id);
+        return repository.save(
+                mapper.map(DTO, Emprestimo.class)
+        );
+    }
 }
