@@ -22,7 +22,7 @@ public class Usuarios implements Serializable {
 
     // Outros atributos como endereço, telefone, etc.
 
-    @OneToMany(mappedBy = "usuarios")
-    private List<Emprestimo> emprestimos;
+    @OneToMany(mappedBy = "usuario")
+    private List<Emprestimo> emprestimo;
 
 }
