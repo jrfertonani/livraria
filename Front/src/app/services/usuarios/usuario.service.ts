@@ -1,9 +1,21 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Usuarios } from '../../model/Usuarios';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
 
-  constructor() { }
+
+  URL = 'http://localhost:8080/usuarios';
+
+  constructor(private http: HttpClient) { }
+
+
+  findALlUsuario():Observable<Usuarios[]>{
+    return this.http.get<Usuarios[]>(this.URL);
+  }
+
 }
