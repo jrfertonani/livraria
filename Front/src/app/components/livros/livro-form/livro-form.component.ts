@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { Livros } from '../../../model/Livros';
 
 @Component({
   selector: 'app-livro-form',
@@ -10,6 +11,8 @@ import { RouterModule } from '@angular/router';
   styleUrl: './livro-form.component.css'
 })
 export class LivroFormComponent implements OnInit{
+
+  @Output() onSubmit = new EventEmitter<Livros>();
 
 
   livrosForm!: FormGroup;
@@ -23,7 +26,7 @@ export class LivroFormComponent implements OnInit{
   }
 
 
-  submit(event:Event){
-
+  submit(){
+    this.onSubmit.emit(this.livrosForm.value);
   }
 }
