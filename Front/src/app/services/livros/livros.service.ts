@@ -27,6 +27,11 @@ getLivrosById(id: number):Observable<Livros>{
   return this.http.get<Livros>(`${this.URL}/${id}`);
 }
 
+updateLivros(livro: Livros):Observable<Livros>{
+  const up = `${this.URL}/${livro.id}`;
+  return this.http.put<Livros>(up,livro);
+}
+
 
 deletar(id: number | undefined):Observable<Livros>{
   return this.http.delete<Livros>(`${this.URL}/${id}`);
