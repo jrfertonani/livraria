@@ -20,12 +20,15 @@ export class UsuarioListComponent implements OnInit{
 
 
   ngOnInit(): void {
-
+    this.serviceUsuarios.findALlUsuario().subscribe( usuarios =>{
+        this.usuarios = usuarios;
+        this.usuariosGeral = usuarios;
+    })
     }
 
 
+    deletar(id: number | undefined){
 
-    search(event: Event){}
+    }
 
-    deletar(id:number | undefined){}
 }
