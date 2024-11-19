@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 @Component({
@@ -15,6 +15,11 @@ export class LivroFormComponent implements OnInit{
   livrosForm!: FormGroup;
 
   ngOnInit(): void {
+    this.livrosForm = new FormGroup({
+      id: new FormControl(0),
+      titulo: new FormControl(''),
+      autor: new FormControl('')
+    })
   }
 
 
