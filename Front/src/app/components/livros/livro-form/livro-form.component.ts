@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Livros } from '../../../model/Livros';
@@ -14,14 +14,16 @@ export class LivroFormComponent implements OnInit{
 
   @Output() onSubmit = new EventEmitter<Livros>();
 
+  @Input() dadosLivros : Livros | null = null;
+
 
   livrosForm!: FormGroup;
 
   ngOnInit(): void {
     this.livrosForm = new FormGroup({
-      id: new FormControl(0),
-      titulo: new FormControl(''),
-      autor: new FormControl('')
+      id: new FormControl(this.dadosLivros ? this.dadosLivros.id : 0),
+      titulo: new FormControl(this.dadosLivros ? this.dadosLivros.titulo :''),
+      autor: new FormControl(this.dadosLivros ? this.dadosLivros.autor :'')
     })
   }
 
@@ -29,4 +31,7 @@ export class LivroFormComponent implements OnInit{
   submit(){
     this.onSubmit.emit(this.livrosForm.value);
   }
+
+
+
 }
