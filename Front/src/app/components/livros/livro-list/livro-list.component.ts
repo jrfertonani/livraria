@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { LivrosService } from '../../../services/livros/livros.service';
 import { Livros } from '../../../model/Livros';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-livro-list',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './livro-list.component.html',
   styleUrl: './livro-list.component.css'
 })
