@@ -21,6 +21,9 @@ export class UsuarioService {
     return this.http.get<Usuarios[]>(this.URL);
   }
 
+  findByIdUsuario(id: number):Observable<Usuarios>{
+    return this.http.get<Usuarios>(`${this.URL}/${id}`);
+  }
 
 
   deleteUsuario(id : number | undefined):Observable<Usuarios>{
