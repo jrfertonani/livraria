@@ -19,14 +19,14 @@ export class LivroUpdateComponent implements OnInit{
 
   livro!: Livros;
 
-  constructor(private esrviceLivro: LivrosService, private router: Router, private route: ActivatedRoute){}
+  constructor(private serviceLivro: LivrosService, private router: Router, private route: ActivatedRoute){}
 
 
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'))
 
-    this.esrviceLivro.getLivrosById(id).subscribe(livros =>{
+    this.serviceLivro.getLivrosById(id).subscribe(livros =>{
       this.livro = livros;
     })
 
@@ -34,8 +34,10 @@ export class LivroUpdateComponent implements OnInit{
   }
 
 
-  editarLivro(livro: Livros){
-
+  updateLivro(livro: Livros){
+    this.serviceLivro.updateLivros(livro).subscribe(livro =>{
+      this.router.navigate(['/livros']);
+    })
   }
 
 }
