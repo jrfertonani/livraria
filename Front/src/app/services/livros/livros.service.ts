@@ -23,9 +23,14 @@ getLivros():Observable<Livros[]>{
   return this.http.get<Livros[]>(this.URL);
 }
 
+getLivrosById(id: number):Observable<Livros>{
+  return this.http.get<Livros>(`${this.URL}/${id}`);
+}
+
 
 deletar(id: number | undefined):Observable<Livros>{
   return this.http.delete<Livros>(`${this.URL}/${id}`);
 }
+
 
 }
