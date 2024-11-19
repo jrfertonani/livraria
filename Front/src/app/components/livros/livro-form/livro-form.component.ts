@@ -12,9 +12,13 @@ import { Livros } from '../../../model/Livros';
 })
 export class LivroFormComponent implements OnInit{
 
+  @Input() btnAcao!: string;
+  @Input() descTitulo!: string;
+
   @Output() onSubmit = new EventEmitter<Livros>();
 
   @Input() dadosLivros : Livros | null = null;
+
 
 
   livrosForm!: FormGroup;
