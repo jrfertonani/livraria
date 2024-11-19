@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <h1> Cadastro de livros</h1>
-<form [formGroup]="livrosForm" (ngSubmit)="submit($event)" #formDit="ngForm">
+<form [formGroup]="livrosForm" (ngSubmit)="submit()" #formDit="ngForm">
   <div  class="mt-3">
     <label for="form-label">Titulo</label>
     <input type="text" placeholder="Insira um titulo" class="form-control" formControlName="titulo"/>
