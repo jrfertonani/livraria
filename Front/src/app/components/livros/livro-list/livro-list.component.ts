@@ -19,20 +19,21 @@ export class LivroListComponent implements OnInit{
 
 
   ngOnInit(): void {
-    this.serviceLivro.getLivros().subscribe(livros =>{
-      this.livros = livros;
+    this.serviceLivro.getLivros().subscribe( livros =>{
+        this.livros = livros;
+        this.livrosGeral = livros;
     })
-  }
+    }
 
+    search(event: Event){
+      const target = event.target as HTMLInputElement;
+      const value = target.value.toLowerCase();
 
-  search(event:Event){
-    const target = event.target as HTMLInputElement;
-    const value = target.value.toLocaleLowerCase();
+      this.livros = this.livrosGeral.filter(livros => {
+        return livros.titulo.toLowerCase().includes(value);
+      })
 
-    this.livros = this.livrosGeral.filter(livros => {
-      return livros.titulo.toLocaleLowerCase().includes(value);
-    })
-  }
+    }
 
   deletar(id: number | undefined){
     this.serviceLivro.deletar(id).subscribe(livros => {
