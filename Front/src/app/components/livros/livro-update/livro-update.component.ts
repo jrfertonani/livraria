@@ -14,6 +14,9 @@ import { CommonModule } from '@angular/common';
 })
 export class LivroUpdateComponent implements OnInit{
 
+  btnAcao = "Editar"
+  descTitulo = "Editar Livro"
+
   livro!: Livros;
 
   constructor(private esrviceLivro: LivrosService, private router: Router, private route: ActivatedRoute){}
