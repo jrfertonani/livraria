@@ -39,7 +39,7 @@ export class UsuarioListComponent implements OnInit{
 
     deletarUsuario(id: number | undefined){
       this.serviceUsuarios.deleteUsuario(id).subscribe(usuario => {
-        window.location.reload();
+        window.location.reload()
       })
     }
 
