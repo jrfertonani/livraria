@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class LivroCreateComponent {
 
+  btnAcao = "Cadastrar";
+  descTitulo = "Cadastrar livro"
+
   constructor(private serviceLivros: LivrosService, private router: Router){}
 
   criarLivros(livro: Livros){
