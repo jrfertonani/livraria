@@ -2,7 +2,7 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { Usuarios } from '../../../model/Usuarios';
 import { UsuarioService } from '../../../services/usuarios/usuario.service';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-usuario-list',
@@ -26,9 +26,21 @@ export class UsuarioListComponent implements OnInit{
     })
     }
 
+    search(event: Event){
+      const target = event.target as HTMLInputElement;
+      const value = target.value.toLowerCase();
 
-    deletar(id: number | undefined){
+      this.usuarios = this.usuariosGeral.filter(usuario => {
+        return usuario.nome.toLowerCase().includes(value);
+      })
 
+    }
+
+
+    deletarUsuario(id: number | undefined){
+      this.serviceUsuarios.deleteUsuario(id).subscribe(usuario => {
+        window.location.reload();
+      })
     }
 
 }
