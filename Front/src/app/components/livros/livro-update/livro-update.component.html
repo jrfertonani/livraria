@@ -1,3 +1,3 @@
-<div>
-  <app-livro-form></app-livro-form>
+<div *ngIf="livro">
+  <app-livro-form [dadosLivros]="livro"> </app-livro-form>
 </div>
