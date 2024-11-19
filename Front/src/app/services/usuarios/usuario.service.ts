@@ -25,6 +25,12 @@ export class UsuarioService {
     return this.http.get<Usuarios>(`${this.URL}/${id}`);
   }
 
+  updateUsuario(usuario: Usuarios):Observable<Usuarios>{
+    const up = `${this.URL}/${usuario.id}`;
+    return this.http.put<Usuarios>(up,usuario);
+
+  }
+
 
   deleteUsuario(id : number | undefined):Observable<Usuarios>{
     return this.http.delete<Usuarios>(`${this.URL}/${id}`);
