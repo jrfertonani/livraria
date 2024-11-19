@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class UsuarioCreateComponent implements OnInit{
 
+  btnAcao = "Cadastrar";
+  descTitulo = "Cadastrar usuario";
+
 
   constructor(private serviceUsuario: UsuarioService, private router: Router){}
 
