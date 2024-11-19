@@ -18,4 +18,10 @@ export class UsuarioService {
     return this.http.get<Usuarios[]>(this.URL);
   }
 
+
+
+  deleteUsuario(id : number | undefined):Observable<Usuarios>{
+    return this.http.delete<Usuarios>(`${this.URL}/${id}`);
+  }
+
 }
