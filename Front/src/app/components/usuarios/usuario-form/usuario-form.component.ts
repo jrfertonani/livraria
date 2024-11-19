@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { Usuarios } from '../../../model/Usuarios';
@@ -12,7 +12,13 @@ import { Usuarios } from '../../../model/Usuarios';
 })
 export class UsuarioFormComponent implements OnInit{
 
+  @Input() btnAcao!: string
+  @Input() descTitulo!: string
+
   @Output() onSubmit = new EventEmitter<Usuarios>();
+  @Input() dadosUsuario : Usuarios | null = null;
+
+
 
 
 
@@ -22,8 +28,8 @@ export class UsuarioFormComponent implements OnInit{
   ngOnInit(): void {
 
     this.usuariorForm = new FormGroup({
-      id: new FormControl(0),
-      nome: new FormControl('')
+      id: new FormControl(this.dadosUsuario ? this.dadosUsuario.id : 0),
+      nome: new FormControl(this.dadosUsuario ? this.dadosUsuario.nome : '')
 
     })
   }
