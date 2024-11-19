@@ -33,4 +33,9 @@ export class LivroUpdateComponent implements OnInit{
 
   }
 
+
+  editarLivro(livro: Livros){
+
+  }
+
 }
