@@ -1,9 +1,23 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Emprestimos } from '../../model/Emprestimos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EmprestimosService {
 
-  constructor() { }
+  URL = 'http://localhost:8080/emprestimo';
+
+  constructor(private http: HttpClient) { }
+
+
+
+  getEmprestimo():Observable<Emprestimos[]>{
+    return this.http.get<Emprestimos[]>(this.URL);
+  }
+
+
+
 }
