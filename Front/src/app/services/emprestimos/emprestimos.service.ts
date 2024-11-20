@@ -13,6 +13,9 @@ export class EmprestimosService {
   constructor(private http: HttpClient) { }
 
 
+  createEmprestimo(emprestimo: Emprestimos):Observable<Emprestimos>{
+    return this.http.post<Emprestimos>(this.URL,emprestimo);
+  }
 
   getEmprestimo():Observable<Emprestimos[]>{
     return this.http.get<Emprestimos[]>(this.URL);
