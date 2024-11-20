@@ -18,6 +18,9 @@ export class EmprestimosService {
     return this.http.get<Emprestimos[]>(this.URL);
   }
 
+  deleteEmprestimo(id: number | undefined):Observable<Emprestimos>{
+    return this.http.delete<Emprestimos>(`${this.URL}/${id}`);
 
+  }
 
 }
