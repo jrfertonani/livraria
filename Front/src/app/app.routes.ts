@@ -9,6 +9,8 @@ import { LivroCreateComponent } from './components/livros/livro-create/livro-cre
 import { LivroUpdateComponent } from './components/livros/livro-update/livro-update.component';
 import { UsuarioCreateComponent } from './components/usuarios/usuario-create/usuario-create.component';
 import { UsuarioUpdateComponent } from './components/usuarios/usuario-update/usuario-update.component';
+import { EmpCreateComponent } from './components/emprestimos/emp-create/emp-create.component';
+import { EmpDetalheComponent } from './components/emprestimos/emp-detalhe/emp-detalhe.component';
 
 export const routes: Routes = [
 
@@ -21,6 +23,10 @@ export const routes: Routes = [
   {path:'usuarios', component: UsuarioListComponent},
   {path:"usuarios/cadastrar", component: UsuarioCreateComponent},
   {path:"usuario/update/:id", component: UsuarioUpdateComponent},
+
   {path:"emprestimos", component: EmpListComponent},
+  {path:'emprestimo/cadastrar', component: EmpCreateComponent},
+  {path:'emprestimo/editar/:id', component: EmpListComponent},
+  {path:'emprestimo/detalhe/:id', component: EmpDetalheComponent},
 
 ];
