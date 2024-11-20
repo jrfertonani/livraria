@@ -38,7 +38,11 @@ export class EmpListComponent implements OnInit{
 
 
 
-  deletar(){}
+  deletar(id: number | undefined){
+    this.serviceEmprestimo.deleteEmprestimo(id).subscribe(emprestimos=>{
+      window.location.reload();
+    })
+  }
 
 
   search(event: Event){
