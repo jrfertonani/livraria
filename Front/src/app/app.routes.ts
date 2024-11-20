@@ -16,6 +16,8 @@ export const routes: Routes = [
   {path:'livros', component: LivroListComponent},
   {path:'cadastro',component: LivroCreateComponent},
   {path:'editar/:id',component: LivroUpdateComponent},
+
+
   {path:'usuarios', component: UsuarioListComponent},
   {path:"usuarios/cadastrar", component: UsuarioCreateComponent},
   {path:"usuario/update/:id", component: UsuarioUpdateComponent},
