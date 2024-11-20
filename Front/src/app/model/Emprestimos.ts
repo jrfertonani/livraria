@@ -1,10 +1,10 @@
 import { Livros } from "./Livros";
 import { Usuarios } from "./Usuarios";
 
-export interface Servicos {
+export interface Emprestimos {
   id?: number;
-  livros: Livros;
-  usuarios: Usuarios;
+  tituloLivro: Livros;
+  nomeUsuario: Usuarios;
   dataEmprestimo: string;
   dataDevolucao: number;
   devolvido: boolean;
