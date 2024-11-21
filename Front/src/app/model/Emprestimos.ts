@@ -5,7 +5,7 @@ export interface Emprestimos {
   id?: number;
   tituloLivro: Livros;
   nomeUsuario: Usuarios;
-  dataEmprestimo: string;
+  dataEmprestimo: number;
   dataDevolucao: number;
   devolvido: boolean;
 
