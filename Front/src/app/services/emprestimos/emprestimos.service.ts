@@ -17,6 +17,7 @@ export class EmprestimosService {
     return this.http.post<Emprestimos>(this.URL,emprestimo);
   }
 
+
   getEmprestimo():Observable<Emprestimos[]>{
     return this.http.get<Emprestimos[]>(this.URL);
   }
