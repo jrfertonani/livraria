@@ -24,7 +24,7 @@ export const routes: Routes = [
   {path:"usuarios/cadastrar", component: UsuarioCreateComponent},
   {path:"usuario/update/:id", component: UsuarioUpdateComponent},
 
-  {path:"emprestimos", component: EmpListComponent},
+  {path:"emprestimo", component: EmpListComponent},
   {path:'emprestimo/cadastrar', component: EmpCreateComponent},
   {path:'emprestimo/editar/:id', component: EmpListComponent},
   {path:'emprestimo/detalhe/:id', component: EmpDetalheComponent},
