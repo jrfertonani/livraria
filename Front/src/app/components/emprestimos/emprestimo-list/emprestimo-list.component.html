@@ -1,1 +1,47 @@
-<p>emprestimo-list works!</p>
+<div class="container mt-5">
+  <button class="btn btn-success w-100" >Emprestar novo livro.</button>
+  <div>
+    <label class="form-label">Pesqisar:</label>
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Qual livro deseja buscar?"
+    />
+  </div>
+  <div class="text-center">
+  <table class="table table-hover table-borderd mt-5">
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th>
+        <th>Livro</th>
+        <th>Usuario</th>
+        <th></th>
+      </tr>
+    </thead>
+<!--
+    <tbody >
+      @if (livros.length > 0) {
+          @for (livro of livros; track $index) {
+
+            <tr>
+              <td>{{ livro.id }}</td>
+              <td>{{ livro.titulo }}</td>
+              <td>{{ livro.autor }}</td>
+              <td>
+                <button class="btn btn-warning mx-2" [routerLink]="['/editar', livro.id]">Editar</button>
+                <button class="btn btn-danger mx-2" (click)="deletar(livro.id)">Excluir</button>
+              </td>
+            </tr>
+          }
+      }@else {
+        <tr class="text-center">
+          <td colspan="4">Nenhum livro cadastrado!</td>
+        </tr>
+      }
+
+
+    </tbody>
+       -->
+  </table>
+</div>
+</div>
