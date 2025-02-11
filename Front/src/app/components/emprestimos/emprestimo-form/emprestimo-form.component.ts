@@ -27,7 +27,7 @@ export class EmprestimoFormComponent implements OnInit {
   }
 
   submit() {
-    throw new Error('Method not implemented.');
+    console.log(this.emprestimoForm.value);
     }
 
 }
