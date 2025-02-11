@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { EmprestimoFormComponent } from "../emprestimo-form/emprestimo-form.component";
 
 @Component({
-  selector: 'app-emprestimo-update',
+  selector: 'app-emprestimos-update',
   standalone: true,
-  imports: [],
+  imports: [EmprestimoFormComponent],
   templateUrl: './emprestimo-update.component.html',
   styleUrl: './emprestimo-update.component.css'
 })
