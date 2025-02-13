@@ -25,5 +25,9 @@ URL = 'http://localhost:8080/emprestimos';
 
   }
 
+  criarEmprestimo(emprestimo: Emprestimos): Observable<Emprestimos[]>{
+    return this.http.post<Emprestimos[]>(this.URL, emprestimo);
+  }
+
 
 }

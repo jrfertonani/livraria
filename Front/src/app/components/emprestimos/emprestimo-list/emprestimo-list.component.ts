@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Emprestimos } from '../../../model/Emprestimos';
 import { EmprestimoService } from '../../../services/emprestimos/emprestimo.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-emprestimo-list',
   standalone: true,
-  imports: [],
+  imports: [RouterModule],
   templateUrl: './emprestimo-list.component.html',
   styleUrl: './emprestimo-list.component.css'
 })

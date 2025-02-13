@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { Emprestimos } from '../../../model/Emprestimos';
 
 @Component({
   selector: 'app-emprestimo-form',
@@ -11,6 +12,7 @@ import { RouterModule } from '@angular/router';
 })
 export class EmprestimoFormComponent implements OnInit {
 
+  @Output()onSubmit = new EventEmitter<Emprestimos>();
 
   emprestimoForm!: FormGroup;
 
@@ -27,7 +29,7 @@ export class EmprestimoFormComponent implements OnInit {
   }
 
   submit() {
-    console.log(this.emprestimoForm.value);
+    this.onSubmit.emit(this.emprestimoForm.value);
 
 
     }
