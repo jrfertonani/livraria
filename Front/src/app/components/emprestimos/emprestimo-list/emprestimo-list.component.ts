@@ -37,4 +37,9 @@ export class EmprestimoListComponent implements OnInit{
     }
 
 
+    deletar(id:number | undefined){
+      this.serviceEmprestimo.deletarEmprestimo(id).subscribe( emprestimo => {
+        window.location.reload();
+      })
+    }
 }

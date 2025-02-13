@@ -29,16 +29,16 @@
               <td>{{ emprestimos.id }}</td>
               <td>{{ emprestimos.livro.titulo }}</td>
               <td>{{ emprestimos.usuario.nome}}</td>
-              <td>{{ emprestimos.devolvido == true ?"Devolvido":"Emprestado"}}</td>
+              <td>{{ emprestimos.devolvido == true ?"Devolvido":"Emprestimo"}}</td>
               <td>
                 <button class="btn btn-warning mx-2" >Editar</button>
-                <button class="btn btn-danger mx-2" >Excluir</button>
+                <button class="btn btn-danger mx-2" (click)="deletar(emprestimos.id)">Excluir</button>
               </td>
             </tr>
           }
       }@else {
         <tr class="text-center">
-          <td colspan="4">Nenhum livro cadastrado!</td>
+          <td colspan="4">Nenhum livro cadastrado com este nome!</td>
         </tr>
       }
 

@@ -20,6 +20,10 @@ URL = 'http://localhost:8080/emprestimos';
     return this.http.get<Emprestimos[]>(this.URL);
 
   }
+  deletarEmprestimo(id:number | undefined): Observable<Emprestimos[]>{
+    return this.http.delete<Emprestimos[]>(`${this.URL}/${id}`);
+
+  }
 
 
 }
