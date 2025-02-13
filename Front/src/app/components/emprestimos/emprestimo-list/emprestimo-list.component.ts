@@ -27,6 +27,14 @@ export class EmprestimoListComponent implements OnInit{
     }
 
 
+    search(event:Event){
+      const target = event.target as HTMLInputElement;
+      const value = target.value.toLowerCase();
+
+      this.emprestimo = this.emprestimosGeral.filter(emprestimo => {
+        return emprestimo.livro.titulo.toLowerCase().includes(value);
+      })
+    }
 
 
 }
