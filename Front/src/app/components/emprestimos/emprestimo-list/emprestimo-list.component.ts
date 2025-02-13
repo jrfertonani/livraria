@@ -17,8 +17,12 @@ export class EmprestimoListComponent implements OnInit{
   constructor(private serviceEmprestimo: EmprestimoService){}
 
 
-  ngOnInit(): void {
-
+    ngOnInit(): void {
+      this.serviceEmprestimo.getEmprestimos().subscribe(emprestimo =>{
+        this.emprestimo = emprestimo;
+        this.emprestimosGeral = emprestimo;
+        console.log(this.emprestimo);
+      })
 
     }
 
