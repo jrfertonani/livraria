@@ -20,8 +20,7 @@ public class Usuarios implements Serializable {
     @Column(nullable = false)
     private String nome;
 
-    // Outros atributos como endereço, telefone, etc.
-
+    @JsonIgnore
     @OneToMany(mappedBy = "usuario")
     private List<Emprestimo> emprestimo;
 

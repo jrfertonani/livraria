@@ -2,6 +2,7 @@ package Back.livros.model.entity;
 
 import Back.emprestimo.model.entity.Emprestimo;
 import Back.usuarios.model.entity.Usuarios;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -22,6 +23,7 @@ public class Livros implements Serializable {
     @Column(nullable = false)
     private String autor;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "livro")
     private List<Emprestimo> emprestimo;
 

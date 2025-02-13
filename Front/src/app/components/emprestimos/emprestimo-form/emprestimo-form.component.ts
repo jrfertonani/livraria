@@ -28,6 +28,8 @@ export class EmprestimoFormComponent implements OnInit {
 
   submit() {
     console.log(this.emprestimoForm.value);
+
+
     }
 
 }

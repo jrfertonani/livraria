@@ -10,8 +10,8 @@ import lombok.Data;
 public class emprestimoDTO {
 
     private Long id;
-    private Livros tituloLivro; // Em vez de idLivro, exibimos o título do livro
-    private Usuarios nomeUsuario; // Em vez de idUsuario, exibimos o nome do usuário
+    private Livros Livro;
+    private Usuarios Usuario;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
     private boolean devolvido;

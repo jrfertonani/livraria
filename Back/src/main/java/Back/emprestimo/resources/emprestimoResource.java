@@ -14,7 +14,7 @@ import java.util.List;
 
 @CrossOrigin("*")
 @RestController
-@RequestMapping("/emprestimo")
+@RequestMapping("/emprestimos")
 public class emprestimoResource {
 
     @Autowired
