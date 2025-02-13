@@ -30,4 +30,9 @@ URL = 'http://localhost:8080/emprestimos';
   }
 
 
+  getEmprestimoId(id:number | undefined): Observable<Emprestimos>{
+    return this.http.get<Emprestimos>(`${this.URL}/${id}`);
+  }
+
+
 }
