@@ -34,5 +34,9 @@ URL = 'http://localhost:8080/emprestimos';
     return this.http.get<Emprestimos>(`${this.URL}/${id}`);
   }
 
+  editarEmprestimo(emprestimo: Emprestimos): Observable<Emprestimos[]>{
+    return this.http.put<Emprestimos[]>(this.URL, emprestimo);
+  }
+
 
 }

@@ -14,6 +14,9 @@ import { CommonModule } from '@angular/common';
 })
 export class EmprestimoUpdateComponent {
 
+  btnAcao = "Editar";
+  descTitulo = "Editar Empréstimo";
+
   emprestimo!: Emprestimos;
 
   constructor(private serviceEmprestimo: EmprestimoService, private router: Router, private route: ActivatedRoute){}
@@ -29,6 +32,12 @@ export class EmprestimoUpdateComponent {
       console.log(2);
 
       this.emprestimo = emprestimo;
+    })
+  }
+
+  editarEmprestimo(emprestimo: Emprestimos){
+    this.serviceEmprestimo.editarEmprestimo(emprestimo).subscribe(emprestimo =>{
+      this.router.navigate(['/emprestimos']);
     })
   }
 

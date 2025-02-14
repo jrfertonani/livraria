@@ -13,6 +13,9 @@ import { Router } from '@angular/router';
 })
 export class EmprestimoCreateComponent {
 
+  btnAcao= "Cadastrar";
+  descTitulo="Cadastrar um Emprestimo";
+
   constructor(private serviceEmprestimo : EmprestimoService, private router: Router){}
 
   criarEmprestimo(emprestimo: Emprestimos){

@@ -12,7 +12,11 @@ import { Emprestimos } from '../../../model/Emprestimos';
 })
 export class EmprestimoFormComponent implements OnInit {
 
+  @Input() btnAcao!: string;
+  @Input() descTitulo!: string;
+
   @Input() dadosEmprestimo: Emprestimos | null = null;
+
   @Output()onSubmit = new EventEmitter<Emprestimos>();
 
   emprestimoForm!: FormGroup;

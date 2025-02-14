@@ -24,4 +24,5 @@ public class Usuarios implements Serializable {
     @OneToMany(mappedBy = "usuario")
     private List<Emprestimo> emprestimo;
 
+
 }
