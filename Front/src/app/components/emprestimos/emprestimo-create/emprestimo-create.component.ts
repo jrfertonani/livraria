@@ -3,6 +3,8 @@ import { EmprestimoFormComponent } from "../emprestimo-form/emprestimo-form.comp
 import { Emprestimos } from '../../../model/Emprestimos';
 import { EmprestimoService } from '../../../services/emprestimos/emprestimo.service';
 import { Router } from '@angular/router';
+import { UsuarioService } from '../../../services/usuarios/usuario.service';
+import { LivrosService } from '../../../services/livros/livros.service';
 
 @Component({
   selector: 'app-emprestimo-create',
@@ -16,7 +18,10 @@ export class EmprestimoCreateComponent {
   btnAcao= "Cadastrar";
   descTitulo="Cadastrar um Emprestimo";
 
-  constructor(private serviceEmprestimo : EmprestimoService, private router: Router){}
+  constructor(private serviceEmprestimo : EmprestimoService, private router: Router,
+    private serviceUsuario: UsuarioService,
+    private serviceLivro: LivrosService
+  ){}
 
   criarEmprestimo(emprestimo: Emprestimos){
     this.serviceEmprestimo.criarEmprestimo(emprestimo).subscribe(emprestimo => {
